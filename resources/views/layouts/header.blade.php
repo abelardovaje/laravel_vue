@@ -1,0 +1,1 @@
+<app-header :menus="links"></app-header>
