@@ -20,5 +20,5 @@ Route::get('/home',function(){
 });
 
 Route::get('/users',function(){
- return view('users');
+ return view('index');
 });

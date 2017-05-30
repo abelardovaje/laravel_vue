@@ -8,22 +8,12 @@
 			<div class="row user-container">
 			
 				<div class="col-lg-2 side-bar-container">
-						
-					<form @submit.prevent="submit">						
-						<div>
-							<label>Name:</label><input v-model="formData.name"type="text" name="" placeholder="name">
-						</div>
-						<div>
-							<label>Email:</label><input v-model="formData.email"type="text" name="" placeholder="email">
-						</div>
-						<div>
-							<label>Address:</label><input v-model="formData.address"type="text" name="" placeholder="address">
-						</div>
-						<div>
-							<button >{{(onEdit) ? 'Update' : 'Add'}}</button>
-						</div>
-					</form>
 
+					<user-form 
+					:onEdit="onEdit" 
+					:onEditKey="onEditKey" 
+					v-on:toggleOnEdit="toggleOnEdit"/>
+					
 				</div>
 
 				<div class="col-lg-10 user-table-container">
@@ -64,37 +54,27 @@
 </template>
 
 <script type="text/javascript">
-import _ from 'lodash';	
+
+import userForm from './user-form.vue';
 export default{
 	data(){
 		return {
-			title:'User component',
-			formData:{				
-				name:'',
-				email:'',
-				address:'',
-			},
-			onEdit:false,
+			title:'User component',			
+			onEdit:false,			
 			onEditKey:undefined
 		}
 	},
 	methods:{
 		edit(user,key){
-
-			this.formData = _.clone(user,true);	
+			
+			this.$store.commit('setFormData',_.clone(user,true));
 			this.onEdit = true;
 			this.onEditKey = key;
 
 		},
-		submit(){
+		toggleOnEdit(){
 			
-			if(this.onEdit){				
-				this.$store.commit('updateUser',{payload:_.clone(this.formData),key:this.onEditKey});
-				return;
-			}				
-			this.$store.commit('addUser',_.clone(this.formData));			
-			this.formData = {};
-			this.onEdit = false;
+			this.onEdit = !this.onEdit;				
 
 		},
 		deleteUser(key,id){
@@ -106,8 +86,11 @@ export default{
 	},
 	computed:{
 		users(){
-			return this.$store.state.users;
+			return this.$store.state.user.users;
 		}
+	},
+	components:{
+		'user-form':userForm
 	}
 
 }

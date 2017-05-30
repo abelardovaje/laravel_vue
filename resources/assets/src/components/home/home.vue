@@ -1,34 +1,19 @@
-<template>
-
-	<div class="home-container">
-		<app-header/>
-		<contact-form/>			
-		<app-footer/>
-	</div>
-
+<template>	
+		<div>{{title}}</div>
 </template>
 
 <script>
+	
+	export default{
+		data(){
+			return{				
+				title:'Home component',
+			}
+		},
+		created(){
+			console.log(this.$store.state.user.users[0].name);
+		}
+	}
 
-import header from '../layouts/header.vue';
-import footer from '../layouts/footer.vue';
-
-export default {
-  data () {
-    return {
-      title: 'Home pages'
-    }
-  },
-  components:{
-  	'app-header':header,
-  	'app-footer':footer,
-  	
-  }
-}
 </script>
 
-<style scope>
-.message {
-  color: blue;
-}
-</style>

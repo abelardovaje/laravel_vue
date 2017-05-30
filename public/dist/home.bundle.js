@@ -1,4 +1,4 @@
-webpackJsonp([0],[
+webpackJsonp([1],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8,15 +8,15 @@ webpackJsonp([0],[
 
 	var _vue2 = _interopRequireDefault(_vue);
 
-	var _home = __webpack_require__(3);
+	var _home = __webpack_require__(21);
 
 	var _home2 = _interopRequireDefault(_home);
 
-	var _contactForm = __webpack_require__(22);
+	var _contactForm = __webpack_require__(33);
 
 	var _contactForm2 = _interopRequireDefault(_contactForm);
 
-	var _store = __webpack_require__(30);
+	var _store = __webpack_require__(41);
 
 	var _store2 = _interopRequireDefault(_store);
 
@@ -34,18 +34,186 @@ webpackJsonp([0],[
 /***/ }),
 /* 1 */,
 /* 2 */,
-/* 3 */
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var Component = __webpack_require__(6)(
+	  /* script */
+	  __webpack_require__(13),
+	  /* template */
+	  __webpack_require__(14),
+	  /* scopeId */
+	  null,
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "C:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\layouts\\header.vue"
+	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+	if (Component.options.functional) {console.error("[vue-loader] header.vue: functional components are not supported with templates, they should use render functions.")}
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-28eb54d4", Component.options)
+	  } else {
+	    hotAPI.reload("data-v-28eb54d4", Component.options)
+	  }
+	})()}
+
+	module.exports = Component.exports
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	exports.default = {
+		data: function data() {
+			return {
+				title: 'header'
+			};
+		}
+	};
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', [_c('h1', [_vm._v("Header")]), _vm._v(" "), _c('router-link', {
+	    attrs: {
+	      "to": "/"
+	    }
+	  }, [_vm._v("Home")]), _vm._v(" "), _c('router-link', {
+	    attrs: {
+	      "to": "/users"
+	    }
+	  }, [_vm._v("User")])], 1)
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-hot-reload-api").rerender("data-v-28eb54d4", module.exports)
+	  }
+	}
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var Component = __webpack_require__(6)(
+	  /* script */
+	  __webpack_require__(16),
+	  /* template */
+	  __webpack_require__(17),
+	  /* scopeId */
+	  null,
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "C:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\layouts\\footer.vue"
+	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+	if (Component.options.functional) {console.error("[vue-loader] footer.vue: functional components are not supported with templates, they should use render functions.")}
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-6b501cb8", Component.options)
+	  } else {
+	    hotAPI.reload("data-v-6b501cb8", Component.options)
+	  }
+	})()}
+
+	module.exports = Component.exports
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+
+	exports.default = {
+		data: function data() {
+			return {};
+		}
+	};
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('h1', [_vm._v("Footer")])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-hot-reload-api").rerender("data-v-6b501cb8", module.exports)
+	  }
+	}
+
+/***/ }),
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(4)
+	__webpack_require__(22)
 
-	var Component = __webpack_require__(13)(
+	var Component = __webpack_require__(6)(
 	  /* script */
-	  __webpack_require__(14),
+	  __webpack_require__(31),
 	  /* template */
-	  __webpack_require__(21),
+	  __webpack_require__(32),
 	  /* scopeId */
 	  null,
 	  /* cssModules */
@@ -72,17 +240,17 @@ webpackJsonp([0],[
 
 
 /***/ }),
-/* 4 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(5);
+	var content = __webpack_require__(23);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(11)("b115c0ba", content, false);
+	var update = __webpack_require__(29)("b115c0ba", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
@@ -98,10 +266,10 @@ webpackJsonp([0],[
 	}
 
 /***/ }),
-/* 5 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(6)(undefined);
+	exports = module.exports = __webpack_require__(24)(undefined);
 	// imports
 
 
@@ -112,15 +280,14 @@ webpackJsonp([0],[
 
 
 /***/ }),
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -129,11 +296,11 @@ webpackJsonp([0],[
 	  value: true
 	});
 
-	var _header = __webpack_require__(15);
+	var _header = __webpack_require__(12);
 
 	var _header2 = _interopRequireDefault(_header);
 
-	var _footer = __webpack_require__(18);
+	var _footer = __webpack_require__(15);
 
 	var _footer2 = _interopRequireDefault(_footer);
 
@@ -166,151 +333,7 @@ webpackJsonp([0],[
 	};
 
 /***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var Component = __webpack_require__(13)(
-	  /* script */
-	  __webpack_require__(16),
-	  /* template */
-	  __webpack_require__(17),
-	  /* scopeId */
-	  null,
-	  /* cssModules */
-	  null
-	)
-	Component.options.__file = "C:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\layouts\\header.vue"
-	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-	if (Component.options.functional) {console.error("[vue-loader] header.vue: functional components are not supported with templates, they should use render functions.")}
-
-	/* hot reload */
-	if (false) {(function () {
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  module.hot.accept()
-	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-28eb54d4", Component.options)
-	  } else {
-	    hotAPI.reload("data-v-28eb54d4", Component.options)
-	  }
-	})()}
-
-	module.exports = Component.exports
-
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	//
-	//
-	//
-	//
-
-	exports.default = {
-		data: function data() {
-			return {
-				title: 'header'
-			};
-		}
-	};
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('h1', [_vm._v("Header")])
-	},staticRenderFns: []}
-	module.exports.render._withStripped = true
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-28eb54d4", module.exports)
-	  }
-	}
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var Component = __webpack_require__(13)(
-	  /* script */
-	  __webpack_require__(19),
-	  /* template */
-	  __webpack_require__(20),
-	  /* scopeId */
-	  null,
-	  /* cssModules */
-	  null
-	)
-	Component.options.__file = "C:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\layouts\\footer.vue"
-	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-	if (Component.options.functional) {console.error("[vue-loader] footer.vue: functional components are not supported with templates, they should use render functions.")}
-
-	/* hot reload */
-	if (false) {(function () {
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  module.hot.accept()
-	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-6b501cb8", Component.options)
-	  } else {
-	    hotAPI.reload("data-v-6b501cb8", Component.options)
-	  }
-	})()}
-
-	module.exports = Component.exports
-
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-
-	exports.default = {
-		data: function data() {
-			return {};
-		}
-	};
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('h1', [_vm._v("Footer")])
-	},staticRenderFns: []}
-	module.exports.render._withStripped = true
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-6b501cb8", module.exports)
-	  }
-	}
-
-/***/ }),
-/* 21 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -327,18 +350,18 @@ webpackJsonp([0],[
 	}
 
 /***/ }),
-/* 22 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(23)
+	__webpack_require__(34)
 
-	var Component = __webpack_require__(13)(
+	var Component = __webpack_require__(6)(
 	  /* script */
-	  __webpack_require__(25),
+	  __webpack_require__(36),
 	  /* template */
-	  __webpack_require__(29),
+	  __webpack_require__(40),
 	  /* scopeId */
 	  null,
 	  /* cssModules */
@@ -365,17 +388,17 @@ webpackJsonp([0],[
 
 
 /***/ }),
-/* 23 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(24);
+	var content = __webpack_require__(35);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(11)("925bd2ae", content, false);
+	var update = __webpack_require__(29)("925bd2ae", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
@@ -391,10 +414,10 @@ webpackJsonp([0],[
 	}
 
 /***/ }),
-/* 24 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(6)(undefined);
+	exports = module.exports = __webpack_require__(24)(undefined);
 	// imports
 
 
@@ -405,7 +428,7 @@ webpackJsonp([0],[
 
 
 /***/ }),
-/* 25 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -414,7 +437,7 @@ webpackJsonp([0],[
 	  value: true
 	});
 
-	var _contactTable = __webpack_require__(26);
+	var _contactTable = __webpack_require__(37);
 
 	var _contactTable2 = _interopRequireDefault(_contactTable);
 
@@ -491,14 +514,14 @@ webpackJsonp([0],[
 	//
 
 /***/ }),
-/* 26 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var Component = __webpack_require__(13)(
+	var Component = __webpack_require__(6)(
 	  /* script */
-	  __webpack_require__(27),
+	  __webpack_require__(38),
 	  /* template */
-	  __webpack_require__(28),
+	  __webpack_require__(39),
 	  /* scopeId */
 	  null,
 	  /* cssModules */
@@ -525,7 +548,7 @@ webpackJsonp([0],[
 
 
 /***/ }),
-/* 27 */
+/* 38 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -642,7 +665,7 @@ webpackJsonp([0],[
 	};
 
 /***/ }),
-/* 28 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -695,7 +718,7 @@ webpackJsonp([0],[
 	}
 
 /***/ }),
-/* 29 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -779,6 +802,91 @@ webpackJsonp([0],[
 	     require("vue-hot-reload-api").rerender("data-v-0b8b87e4", module.exports)
 	  }
 	}
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _vue = __webpack_require__(1);
+
+	var _vue2 = _interopRequireDefault(_vue);
+
+	var _vuex = __webpack_require__(42);
+
+	var _vuex2 = _interopRequireDefault(_vuex);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	_vue2.default.use(_vuex2.default);
+
+	var store = new _vuex2.default.Store({
+		state: {
+			users: [{
+				id: 1,
+				name: 'abel',
+				address: 'cavite',
+				email: 'abel@gmail.com'
+			}],
+			formData: {
+				name: '',
+				email: '',
+				address: ''
+			}
+		},
+		getters: {
+			usersList: function usersList(state) {
+				return state.users;
+			}
+		},
+		mutations: {
+			editData: function editData(state, user) {
+				var _self = this;
+
+				state.users.filter(function (item) {
+					if (item.id === user.id) {
+						for (var x in item) {
+
+							item[x] = user[x];
+						}
+					}
+				});
+			},
+			addUser: function addUser(state, data) {
+				var index = _.findLastIndex(state.users, 'id');
+				data.id = state.users[index].id + 1;
+				state.users.push(data);
+				state.formData = {};
+			},
+			deleteUser: function deleteUser(state, key) {
+
+				state.users.splice(key, 1);
+			},
+			updateUser: function updateUser(state, data) {
+
+				for (var x in state.users[data.key]) {
+					state.users[data.key][x] = data.payload[x];
+				}
+
+				state.formData = {};
+			},
+			setFormData: function setFormData(state, data) {
+				state.formData = data;
+			}
+		},
+		actions: {
+			addUser: function addUser(context, payload) {
+				context.commit('addUser', payload);
+			}
+		}
+	});
+
+	exports.default = store;
 
 /***/ })
 ]);

@@ -4,8 +4,8 @@ var path = require('path');
 module.exports = {
 	// This is the "main" file which should include all other modules
 	entry:{
-		home:'./resources/assets/src/components/home/index.js',
-		user:'./resources/assets/src/components/user/index.js'
+		
+		app:'./resources/assets/src/components/app.js'
 	},
 	// Where should the compiled file go?
 	output: {      

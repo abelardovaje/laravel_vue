@@ -1,8 +1,4 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-Vue.use(Vuex);
-
-const store = new Vuex.Store({
+const user = {
 	state:{
 		users:[
 			{
@@ -11,7 +7,12 @@ const store = new Vuex.Store({
 				address:'cavite',
 				email:'abel@gmail.com'
 			}
-		]
+		],
+		formData:{				
+			name:'',
+			email:'',
+			address:'',
+		},
 	},
 	getters:{
 		usersList(state){
@@ -32,8 +33,11 @@ const store = new Vuex.Store({
 		          }
 		    });		    
 		},
-		addUser(state,data){			
-			state.users.push(data);			
+		addUser(state,data){	
+			var index = _.findLastIndex(state.users,'id');			
+			data.id = (state.users[index].id+1);		
+			state.users.push(data);
+			state.formData = {};					
 		},
 		deleteUser(state,key){
 
@@ -45,12 +49,19 @@ const store = new Vuex.Store({
 			for(var x in state.users[data.key]){
 				state.users[data.key][x] = data.payload[x];
 			}
+
+			state.formData = {};
 			
+		},
+		setFormData(state,data){
+			state.formData = data;
+		}
+	},
+	actions:{
+		addUser(context,payload){
+			context.commit('addUser',payload);
 		}
 	}
-});
+}
 
-export default store;
-
-
-
+export default user;
