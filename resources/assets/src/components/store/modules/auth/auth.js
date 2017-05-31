@@ -1,5 +1,5 @@
 import axios from 'axios';
-const login = {
+const auth = {
 	state:{
 		isLogin:false,
 		user:{}
@@ -16,6 +16,7 @@ const login = {
 				
 				if(!_.isEmpty(res.data)){
 					state.user = res.data;
+					state.isLogin= true;
 					return true;
 				}else{
 					return false;
@@ -27,4 +28,4 @@ const login = {
 }
 
 
-export default login;
+export default auth;

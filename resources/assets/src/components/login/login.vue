@@ -44,7 +44,7 @@ export default{
 
 				if(res){
 					_this.$router.push({name:'home'});
-					console.log(_this.$store.state.login.user);
+					console.log(_this.$store.state.auth.user);
 					return;
 				}
 				alert('Invalid credentials!');				

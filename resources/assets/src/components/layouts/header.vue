@@ -4,7 +4,8 @@
 		  <li><router-link to="/">Home</router-link></li>
 		  <li><router-link to="/users">User</router-link></li>
 		  <li class="active"><router-link to="/users">Lobby</router-link></li>
-		  <li class="active"><router-link to="/login">Login</router-link></li>
+		  <li v-if="!isLogin" class="active"><router-link to="/login">Login</router-link></li>
+		  <li v-if="isLogin" class="active"><router-link to="/logout">logout</router-link></li>		  
 		</ol>		
 		<hr>
 	</div>
@@ -15,6 +16,11 @@
 		data(){
 			return {
 				title:'header'
+			}
+		},
+		computed:{
+			isLogin(){
+				return this.$store.state.auth.isLogin;
 			}
 		}
 	}
