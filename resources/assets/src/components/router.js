@@ -2,14 +2,18 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import home from './home/home.vue';
 import User from './user/user.vue';
+import Login from './login/login.vue';
 Vue.use(VueRouter);
 
 const routes = [
 	{
-		path:'/',component:home,		
+		path:'/',component:home,name:'home'		
 	},
 	{
-		path:'/users',component:User
+		path:'/users',component:User,name:'users'
+	},
+	{
+		path:'/login',component:Login,name:'login'
 	}
 ];
 

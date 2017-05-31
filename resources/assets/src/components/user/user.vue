@@ -37,8 +37,9 @@
 									<td>{{value.email}}</td>
 									<td>{{value.address}}</td>
 									<td>
-										<button @click="edit(value,key)">Edit</button>
-										<button @click="deleteUser(key,value.id)">Delete</button>
+										<v-btn @click.native="edit(value,key)">Edit</v-btn>
+										<v-btn @click.native="deleteUser(key,value.id)">Delete</v-btn>
+										
 									</td>
 								</tr>
 							</tbody>
@@ -98,7 +99,7 @@ export default{
 </script>
 
 <style type="text/css" scope>
-	
+
 .user-container{
 	border:0px solid;
 }

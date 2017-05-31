@@ -3,17 +3,28 @@
 	<div>
 			
 		<form @submit.prevent="submit">						
-			<div>
-				<label>Name:</label><input required v-model="formData.name"type="text" name="" placeholder="name">
+			<div>								
+				<v-text-field  required name="input-1"  v-model="formData.name"  label="Name" ></v-text-field>		                                    
+			</div>
+			<div>				
+				<v-text-field
+				  required
+	              name="input-1"	             
+	              v-model="formData.email"
+	              label="Email"	              
+	            ></v-text-field>
 			</div>
 			<div>
-				<label>Email:</label><input required v-model="formData.email"type="email" name="" placeholder="email">
+				
+				<v-text-field
+				  required
+	              name="input-1"	            
+	              v-model="formData.address"
+	              label="Address"	              
+	            ></v-text-field>
 			</div>
 			<div>
-				<label>Address:</label><input required v-model="formData.address"type="text" name="" placeholder="address">
-			</div>
-			<div>
-				<button >{{(onEdit) ? 'Update' : 'Add'}}</button>
+				<button>{{(onEdit) ? 'Update' : 'Add'}}</button>
 			</div>
 		</form>
 

@@ -18,12 +18,14 @@
     "webpack": "^1.12.2"
   },
   "dependencies": {
+    "axios": "^0.16.1",
     "bootstrap": "^3.3.7",
     "css-loader": "^0.28.0",
     "lodash": "^4.17.4",
     "vue": "^2.2.6",
     "vue-router": "^2.5.3",
     "vue-template-compiler": "^2.2.6",
+    "vuetify": "^0.12.2",
     "vuex": "^2.3.1"
   }
 }

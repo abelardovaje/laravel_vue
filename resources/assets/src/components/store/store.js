@@ -2,17 +2,19 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import home from './modules/home/home';
 import user from './modules/user/user';
+import login from './modules/login/login';
 Vue.use(Vuex);
 
 
-const Store = new Vuex.Store({
+const store = new Vuex.Store({
 
 	modules:{
 		home,
-		user
+		user,
+		login
 	}
 
 });
 
 
-export default Store;
+export default store;

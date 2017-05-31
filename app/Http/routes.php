@@ -22,3 +22,6 @@ Route::get('/home',function(){
 Route::get('/users',function(){
  return view('index');
 });
+
+Route::get('/login','UserController@index');
+Route::post('/login','UserController@login');

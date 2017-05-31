@@ -12,6 +12,7 @@
 		},
 		created(){
 			console.log(this.$store.state.user.users[0].name);
+			this.$store.state.user.users[0].name = 'sample';
 		}
 	}
 
