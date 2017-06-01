@@ -11,8 +11,14 @@
 			}
 		},
 		created(){
-			console.log(this.$store.state.user.users[0].name);
-			this.$store.state.user.users[0].name = 'sample';
+			var _this = this;
+			this.$store.dispatch('getUser').then(function(res){
+
+				if(res){					
+					_this.$store.commit('setUser',{data:res,store:_this.$store});				
+				}
+				
+			});
 		}
 	}
 

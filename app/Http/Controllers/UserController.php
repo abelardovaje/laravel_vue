@@ -18,4 +18,10 @@ class UserController extends Controller
     	return response()->json(App\User::Login($request->all()));
 
     }
+
+    public function getUser(){
+
+    	return response()->json(auth()->user());
+    	
+    }
 }

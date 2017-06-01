@@ -25,3 +25,4 @@ Route::get('/users',function(){
 
 Route::get('/login','UserController@index');
 Route::post('/login','UserController@login');
+Route::get('/getUser','UserController@getUser');

@@ -5,8 +5,9 @@
 		  <li><router-link to="/users">User</router-link></li>
 		  <li class="active"><router-link to="/users">Lobby</router-link></li>
 		  <li v-if="!isLogin" class="active"><router-link to="/login">Login</router-link></li>
-		  <li v-if="isLogin" class="active"><router-link to="/logout">logout</router-link></li>		  
-		</ol>		
+		  <li v-if="isLogin" class="active"><router-link to="/logout">logout</router-link></li>	
+		  <li v-if="isLogin"class="pull-right">Welcome {{user.name}}</li>		  
+		</ol>	
 		<hr>
 	</div>
 </template>
@@ -21,7 +22,18 @@
 		computed:{
 			isLogin(){
 				return this.$store.state.auth.isLogin;
+			},
+			user(){
+				return this.$store.state.auth.user;
 			}
 		}
 	}
 </script>
+
+<style type="text/css">
+	
+.breadcrumb li:last-child:before{
+	content:'';	
+}
+
+</style>

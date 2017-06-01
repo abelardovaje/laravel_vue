@@ -1,15 +1,14 @@
+import state from './state';
+import getters from './getters';
+import mutations from './mutations';
+import actions from './actions';
 const home = {
 	  namespace:true,
-	  state: {
-	  	title:'home'
-	  },
-	  mutations: { },
-	  actions: { },
-	  getters: { 
-	  	getTitle(state){
-	  		return state.title;
-	  	}
-	  }
+	  state: state,
+	  getters:getters,
+	  mutations:mutations,
+	  actions:actions,
+	 
 }
 
 export default home;

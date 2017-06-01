@@ -9697,8 +9697,13 @@ webpackJsonp([0,1],[
 			};
 		},
 		created: function created() {
-			console.log(this.$store.state.user.users[0].name);
-			this.$store.state.user.users[0].name = 'sample';
+			var _this = this;
+			this.$store.dispatch('getUser').then(function (res) {
+
+				if (res) {
+					_this.$store.commit('setUser', { data: res, store: _this.$store });
+				}
+			});
 		}
 	};
 
@@ -13559,25 +13564,39 @@ webpackJsonp([0,1],[
 
 /***/ }),
 /* 31 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+
+	var _state = __webpack_require__(77);
+
+	var _state2 = _interopRequireDefault(_state);
+
+	var _getters = __webpack_require__(78);
+
+	var _getters2 = _interopRequireDefault(_getters);
+
+	var _mutations = __webpack_require__(79);
+
+	var _mutations2 = _interopRequireDefault(_mutations);
+
+	var _actions = __webpack_require__(80);
+
+	var _actions2 = _interopRequireDefault(_actions);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	var home = {
 		namespace: true,
-		state: {
-			title: 'home'
-		},
-		mutations: {},
-		actions: {},
-		getters: {
-			getTitle: function getTitle(state) {
-				return state.title;
-			}
-		}
+		state: _state2.default,
+		getters: _getters2.default,
+		mutations: _mutations2.default,
+		actions: _actions2.default
+
 	};
 
 	exports.default = home;
@@ -15351,6 +15370,10 @@ webpackJsonp([0,1],[
 /* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	
+	/* styles */
+	__webpack_require__(75)
+
 	var Component = __webpack_require__(6)(
 	  /* script */
 	  __webpack_require__(66),
@@ -15403,6 +15426,7 @@ webpackJsonp([0,1],[
 	//
 	//
 	//
+	//
 
 	exports.default = {
 		data: function data() {
@@ -15414,6 +15438,9 @@ webpackJsonp([0,1],[
 		computed: {
 			isLogin: function isLogin() {
 				return this.$store.state.auth.isLogin;
+			},
+			user: function user() {
+				return this.$store.state.auth.user;
 			}
 		}
 	};
@@ -15451,7 +15478,9 @@ webpackJsonp([0,1],[
 	    attrs: {
 	      "to": "/logout"
 	    }
-	  }, [_vm._v("logout")])], 1) : _vm._e()]), _vm._v(" "), _c('hr')])
+	  }, [_vm._v("logout")])], 1) : _vm._e(), _vm._v(" "), (_vm.isLogin) ? _c('li', {
+	    staticClass: "pull-right"
+	  }, [_vm._v("Welcome " + _vm._s(_vm.user.name))]) : _vm._e()]), _vm._v(" "), _c('hr')])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -41617,6 +41646,118 @@ webpackJsonp([0,1],[
 		return module;
 	}
 
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(76);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	if(content.locals) module.exports = content.locals;
+	// add the styles to the DOM
+	var update = __webpack_require__(17)("b7a78336", content, false);
+	// Hot Module Replacement
+	if(false) {
+	 // When the styles change, update the <style> tags
+	 if(!content.locals) {
+	   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-28eb54d4\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./header.vue", function() {
+	     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-28eb54d4\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./header.vue");
+	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+	     update(newContent);
+	   });
+	 }
+	 // When the module is disposed, remove the <style> tags
+	 module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(12)(undefined);
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n.breadcrumb li:last-child:before{\r\n\tcontent:'';\n}\r\n\r\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = {
+		title: ''
+	};
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = {};
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = {
+		setUser: function setUser(state, payload) {
+
+			payload.store.state.auth.user = payload.data;
+			payload.store.state.auth.isLogin = true;
+		}
+	};
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _axios = __webpack_require__(38);
+
+	var _axios2 = _interopRequireDefault(_axios);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {
+		getUser: function getUser(_ref, payload) {
+			var commit = _ref.commit;
+
+			return _axios2.default.get('/getUser').then(function (res) {
+
+				if (!_.isEmpty(res.data)) {
+					return res.data;
+				} else {
+					return false;
+				}
+			});
+		}
+	};
 
 /***/ })
 ]);
