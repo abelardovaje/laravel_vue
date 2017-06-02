@@ -21,6 +21,18 @@
 
 			}
 		},
+		created(){
+			var _this = this;
+			this.$store.dispatch('getUser').then(function(res){
+
+				if(res){					
+					_this.$store.commit('setUser',res);				
+				}else{
+					_this.$store.commit('showLogin');
+				}
+				
+			});
+		},
 		components:{
 			'app-header':Header,
 			'app-footer':Footer

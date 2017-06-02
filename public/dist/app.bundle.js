@@ -12,22 +12,22 @@ webpackJsonp([0,1],[
 
 	var _router2 = _interopRequireDefault(_router);
 
-	var _store = __webpack_require__(29);
+	var _store = __webpack_require__(32);
 
 	var _store2 = _interopRequireDefault(_store);
 
-	var _app = __webpack_require__(63);
+	var _app = __webpack_require__(70);
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _vuetify = __webpack_require__(72);
+	var _vuetify = __webpack_require__(81);
 
 	var _vuetify2 = _interopRequireDefault(_vuetify);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	_vue2.default.use(_vuetify2.default);
-	window._ = __webpack_require__(73);
+	window._ = __webpack_require__(82);
 
 	new _vue2.default({
 		el: '#app',
@@ -7092,6 +7092,10 @@ webpackJsonp([0,1],[
 
 	var _login2 = _interopRequireDefault(_login);
 
+	var _register = __webpack_require__(29);
+
+	var _register2 = _interopRequireDefault(_register);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	_vue2.default.use(_vueRouter2.default);
@@ -7102,6 +7106,8 @@ webpackJsonp([0,1],[
 		path: '/users', component: _user2.default, name: 'users'
 	}, {
 		path: '/login', component: _login2.default, name: 'login'
+	}, {
+		path: '/register', component: _register2.default, name: 'register'
 	}];
 
 	var Router = new _vueRouter2.default({
@@ -9695,15 +9701,6 @@ webpackJsonp([0,1],[
 			return {
 				title: 'Home component'
 			};
-		},
-		created: function created() {
-			var _this = this;
-			this.$store.dispatch('getUser').then(function (res) {
-
-				if (res) {
-					_this.$store.commit('setUser', { data: res, store: _this.$store });
-				}
-			});
 		}
 	};
 
@@ -12599,7 +12596,6 @@ webpackJsonp([0,1],[
 		methods: {
 			login: function login() {
 				var _this = this;
-
 				var credentials = {
 					email: this.email,
 					password: this.password
@@ -12608,8 +12604,10 @@ webpackJsonp([0,1],[
 				this.$store.dispatch('login', credentials).then(function (res) {
 
 					if (res) {
+						/*
+	     	When login success redirect to home page
+	     */
 						_this.$router.push({ name: 'home' });
-						console.log(_this.$store.state.auth.user);
 						return;
 					}
 					alert('Invalid credentials!');
@@ -12705,6 +12703,211 @@ webpackJsonp([0,1],[
 /* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	var Component = __webpack_require__(6)(
+	  /* script */
+	  __webpack_require__(30),
+	  /* template */
+	  __webpack_require__(31),
+	  /* scopeId */
+	  null,
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "C:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\register\\register.vue"
+	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+	if (Component.options.functional) {console.error("[vue-loader] register.vue: functional components are not supported with templates, they should use render functions.")}
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-0d78301c", Component.options)
+	  } else {
+	    hotAPI.reload("data-v-0d78301c", Component.options)
+	  }
+	})()}
+
+	module.exports = Component.exports
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+
+	exports.default = {
+		data: function data() {
+			return {
+				formInputs: {
+					username: '',
+					email: '',
+					password: ''
+				}
+			};
+		},
+
+		methods: {
+			register: function register() {
+				var _this = this;
+				this.$store.dispatch('register', this.formInputs).then(function (res) {
+					/*
+	    	When register is success redirect to home page
+	    */
+					_this.$router.push({ name: 'home' });
+				});
+			}
+		}
+	};
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', [_c('h3', [_vm._v("Register")]), _vm._v(" "), _c('form', {
+	    staticClass: "register-form",
+	    on: {
+	      "submit": function($event) {
+	        $event.preventDefault();
+	        _vm.register($event)
+	      }
+	    }
+	  }, [_c('div', {
+	    staticClass: "form-group"
+	  }, [_c('label', {
+	    attrs: {
+	      "for": "exampleInputEmail1"
+	    }
+	  }, [_vm._v("Username")]), _vm._v(" "), _c('input', {
+	    directives: [{
+	      name: "model",
+	      rawName: "v-model",
+	      value: (_vm.formInputs.username),
+	      expression: "formInputs.username"
+	    }],
+	    staticClass: "form-control",
+	    attrs: {
+	      "type": "text",
+	      "placeholder": "username"
+	    },
+	    domProps: {
+	      "value": (_vm.formInputs.username)
+	    },
+	    on: {
+	      "input": function($event) {
+	        if ($event.target.composing) { return; }
+	        _vm.formInputs.username = $event.target.value
+	      }
+	    }
+	  })]), _vm._v(" "), _c('div', {
+	    staticClass: "form-group"
+	  }, [_c('label', {
+	    attrs: {
+	      "for": "exampleInputEmail1"
+	    }
+	  }, [_vm._v("Email address")]), _vm._v(" "), _c('input', {
+	    directives: [{
+	      name: "model",
+	      rawName: "v-model",
+	      value: (_vm.formInputs.email),
+	      expression: "formInputs.email"
+	    }],
+	    staticClass: "form-control",
+	    attrs: {
+	      "type": "email",
+	      "placeholder": "Email"
+	    },
+	    domProps: {
+	      "value": (_vm.formInputs.email)
+	    },
+	    on: {
+	      "input": function($event) {
+	        if ($event.target.composing) { return; }
+	        _vm.formInputs.email = $event.target.value
+	      }
+	    }
+	  })]), _vm._v(" "), _c('div', {
+	    staticClass: "form-group"
+	  }, [_c('label', {
+	    attrs: {
+	      "for": "exampleInputPassword1"
+	    }
+	  }, [_vm._v("Password")]), _vm._v(" "), _c('input', {
+	    directives: [{
+	      name: "model",
+	      rawName: "v-model",
+	      value: (_vm.formInputs.password),
+	      expression: "formInputs.password"
+	    }],
+	    staticClass: "form-control",
+	    attrs: {
+	      "type": "password",
+	      "placeholder": "Password"
+	    },
+	    domProps: {
+	      "value": (_vm.formInputs.password)
+	    },
+	    on: {
+	      "input": function($event) {
+	        if ($event.target.composing) { return; }
+	        _vm.formInputs.password = $event.target.value
+	      }
+	    }
+	  })]), _vm._v(" "), _c('button', {
+	    staticClass: "btn btn-default",
+	    attrs: {
+	      "type": "submit"
+	    }
+	  }, [_vm._v("Submit")])])])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-hot-reload-api").rerender("data-v-0d78301c", module.exports)
+	  }
+	}
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -12715,19 +12918,19 @@ webpackJsonp([0,1],[
 
 	var _vue2 = _interopRequireDefault(_vue);
 
-	var _vuex = __webpack_require__(30);
+	var _vuex = __webpack_require__(33);
 
 	var _vuex2 = _interopRequireDefault(_vuex);
 
-	var _home = __webpack_require__(31);
+	var _home = __webpack_require__(34);
 
 	var _home2 = _interopRequireDefault(_home);
 
-	var _user = __webpack_require__(32);
+	var _user = __webpack_require__(64);
 
 	var _user2 = _interopRequireDefault(_user);
 
-	var _auth = __webpack_require__(37);
+	var _auth = __webpack_require__(69);
 
 	var _auth2 = _interopRequireDefault(_auth);
 
@@ -12748,7 +12951,7 @@ webpackJsonp([0,1],[
 	exports.default = store;
 
 /***/ }),
-/* 30 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/**
@@ -13563,7 +13766,7 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 31 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -13572,19 +13775,19 @@ webpackJsonp([0,1],[
 		value: true
 	});
 
-	var _state = __webpack_require__(77);
+	var _state = __webpack_require__(35);
 
 	var _state2 = _interopRequireDefault(_state);
 
-	var _getters = __webpack_require__(78);
+	var _getters = __webpack_require__(36);
 
 	var _getters2 = _interopRequireDefault(_getters);
 
-	var _mutations = __webpack_require__(79);
+	var _mutations = __webpack_require__(37);
 
 	var _mutations2 = _interopRequireDefault(_mutations);
 
-	var _actions = __webpack_require__(80);
+	var _actions = __webpack_require__(38);
 
 	var _actions2 = _interopRequireDefault(_actions);
 
@@ -13602,81 +13805,6 @@ webpackJsonp([0,1],[
 	exports.default = home;
 
 /***/ }),
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _state = __webpack_require__(33);
-
-	var _state2 = _interopRequireDefault(_state);
-
-	var _getters = __webpack_require__(34);
-
-	var _getters2 = _interopRequireDefault(_getters);
-
-	var _mutations = __webpack_require__(35);
-
-	var _mutations2 = _interopRequireDefault(_mutations);
-
-	var _actions = __webpack_require__(36);
-
-	var _actions2 = _interopRequireDefault(_actions);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var user = {
-		state: _state2.default,
-		getters: _getters2.default,
-		mutations: _mutations2.default,
-		actions: _actions2.default
-	};
-
-	exports.default = user;
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.default = {
-		users: [{
-			id: 1,
-			name: 'abel',
-			address: 'cavite',
-			email: 'abel@gmail.com'
-		}],
-		formData: {
-			name: '',
-			email: '',
-			address: ''
-		}
-	};
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.default = {
-		usersList: function usersList(state) {
-			return state.users;
-		}
-	};
-
-/***/ }),
 /* 35 */
 /***/ (function(module, exports) {
 
@@ -13686,116 +13814,65 @@ webpackJsonp([0,1],[
 		value: true
 	});
 	exports.default = {
-		editData: function editData(state, user) {
-			var _self = this;
-
-			state.users.filter(function (item) {
-				if (item.id === user.id) {
-					for (var x in item) {
-
-						item[x] = user[x];
-					}
-				}
-			});
-		},
-		addUser: function addUser(state, data) {
-			var index = _.findLastIndex(state.users, 'id');
-			data.id = state.users[index].id + 1;
-			state.users.push(data);
-			state.formData = {};
-		},
-		deleteUser: function deleteUser(state, key) {
-
-			state.users.splice(key, 1);
-		},
-		updateUser: function updateUser(state, data) {
-
-			for (var x in state.users[data.key]) {
-				state.users[data.key][x] = data.payload[x];
-			}
-
-			state.formData = {};
-		},
-		setFormData: function setFormData(state, data) {
-			state.formData = data;
-		}
+		title: ''
 	};
 
 /***/ }),
 /* 36 */
 /***/ (function(module, exports) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	exports.default = {
-		addUser: function addUser(context, payload) {
-			context.commit('addUser', payload);
-		}
-	};
+	exports.default = {};
 
 /***/ }),
 /* 37 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-
-	var _axios = __webpack_require__(38);
-
-	var _axios2 = _interopRequireDefault(_axios);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var auth = {
-		state: {
-			isLogin: false,
-			user: {}
-		},
-		getters: {},
-		mutations: {},
-		actions: {
-			login: function login(_ref, payload) {
-				var commit = _ref.commit,
-				    state = _ref.state;
-
-				return _axios2.default.post('login', payload).then(function (res) {
-
-					if (!_.isEmpty(res.data)) {
-						state.user = res.data;
-						state.isLogin = true;
-						return true;
-					} else {
-						return false;
-					}
-				});
-			}
-		}
-	};
-
-	exports.default = auth;
+	exports.default = {};
 
 /***/ }),
 /* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(39);
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _axios = __webpack_require__(39);
+
+	var _axios2 = _interopRequireDefault(_axios);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {};
 
 /***/ }),
 /* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__(40);
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	'use strict';
 
-	var utils = __webpack_require__(40);
-	var bind = __webpack_require__(41);
-	var Axios = __webpack_require__(42);
-	var defaults = __webpack_require__(43);
+	var utils = __webpack_require__(41);
+	var bind = __webpack_require__(42);
+	var Axios = __webpack_require__(43);
+	var defaults = __webpack_require__(44);
 
 	/**
 	 * Create an instance of Axios
@@ -13828,15 +13905,15 @@ webpackJsonp([0,1],[
 	};
 
 	// Expose Cancel & CancelToken
-	axios.Cancel = __webpack_require__(60);
-	axios.CancelToken = __webpack_require__(61);
-	axios.isCancel = __webpack_require__(57);
+	axios.Cancel = __webpack_require__(61);
+	axios.CancelToken = __webpack_require__(62);
+	axios.isCancel = __webpack_require__(58);
 
 	// Expose all/spread
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(62);
+	axios.spread = __webpack_require__(63);
 
 	module.exports = axios;
 
@@ -13845,12 +13922,12 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {'use strict';
 
-	var bind = __webpack_require__(41);
+	var bind = __webpack_require__(42);
 
 	/*global toString:true*/
 
@@ -14164,7 +14241,7 @@ webpackJsonp([0,1],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13).Buffer))
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -14181,17 +14258,17 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var defaults = __webpack_require__(43);
-	var utils = __webpack_require__(40);
-	var InterceptorManager = __webpack_require__(54);
-	var dispatchRequest = __webpack_require__(55);
-	var isAbsoluteURL = __webpack_require__(58);
-	var combineURLs = __webpack_require__(59);
+	var defaults = __webpack_require__(44);
+	var utils = __webpack_require__(41);
+	var InterceptorManager = __webpack_require__(55);
+	var dispatchRequest = __webpack_require__(56);
+	var isAbsoluteURL = __webpack_require__(59);
+	var combineURLs = __webpack_require__(60);
 
 	/**
 	 * Create a new instance of Axios
@@ -14272,13 +14349,13 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	var utils = __webpack_require__(40);
-	var normalizeHeaderName = __webpack_require__(44);
+	var utils = __webpack_require__(41);
+	var normalizeHeaderName = __webpack_require__(45);
 
 	var DEFAULT_CONTENT_TYPE = {
 	  'Content-Type': 'application/x-www-form-urlencoded'
@@ -14294,10 +14371,10 @@ webpackJsonp([0,1],[
 	  var adapter;
 	  if (typeof XMLHttpRequest !== 'undefined') {
 	    // For browsers use XHR adapter
-	    adapter = __webpack_require__(45);
+	    adapter = __webpack_require__(46);
 	  } else if (typeof process !== 'undefined') {
 	    // For node use HTTP adapter
-	    adapter = __webpack_require__(45);
+	    adapter = __webpack_require__(46);
 	  }
 	  return adapter;
 	}
@@ -14371,12 +14448,12 @@ webpackJsonp([0,1],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(40);
+	var utils = __webpack_require__(41);
 
 	module.exports = function normalizeHeaderName(headers, normalizedName) {
 	  utils.forEach(headers, function processHeader(value, name) {
@@ -14389,18 +14466,18 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	var utils = __webpack_require__(40);
-	var settle = __webpack_require__(46);
-	var buildURL = __webpack_require__(49);
-	var parseHeaders = __webpack_require__(50);
-	var isURLSameOrigin = __webpack_require__(51);
-	var createError = __webpack_require__(47);
-	var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(52);
+	var utils = __webpack_require__(41);
+	var settle = __webpack_require__(47);
+	var buildURL = __webpack_require__(50);
+	var parseHeaders = __webpack_require__(51);
+	var isURLSameOrigin = __webpack_require__(52);
+	var createError = __webpack_require__(48);
+	var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(53);
 
 	module.exports = function xhrAdapter(config) {
 	  return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -14496,7 +14573,7 @@ webpackJsonp([0,1],[
 	    // This is only done if running in a standard browser environment.
 	    // Specifically not if we're in a web worker, or react-native.
 	    if (utils.isStandardBrowserEnv()) {
-	      var cookies = __webpack_require__(53);
+	      var cookies = __webpack_require__(54);
 
 	      // Add xsrf header
 	      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -14575,12 +14652,12 @@ webpackJsonp([0,1],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var createError = __webpack_require__(47);
+	var createError = __webpack_require__(48);
 
 	/**
 	 * Resolve or reject a Promise based on response status.
@@ -14606,12 +14683,12 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var enhanceError = __webpack_require__(48);
+	var enhanceError = __webpack_require__(49);
 
 	/**
 	 * Create an Error with the specified message, config, error code, and response.
@@ -14629,7 +14706,7 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -14654,12 +14731,12 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(40);
+	var utils = __webpack_require__(41);
 
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -14728,12 +14805,12 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(40);
+	var utils = __webpack_require__(41);
 
 	/**
 	 * Parse headers into an object
@@ -14771,12 +14848,12 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(40);
+	var utils = __webpack_require__(41);
 
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -14845,7 +14922,7 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -14887,12 +14964,12 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(40);
+	var utils = __webpack_require__(41);
 
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -14946,12 +15023,12 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(40);
+	var utils = __webpack_require__(41);
 
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -15004,15 +15081,15 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(40);
-	var transformData = __webpack_require__(56);
-	var isCancel = __webpack_require__(57);
-	var defaults = __webpack_require__(43);
+	var utils = __webpack_require__(41);
+	var transformData = __webpack_require__(57);
+	var isCancel = __webpack_require__(58);
+	var defaults = __webpack_require__(44);
 
 	/**
 	 * Throws a `Cancel` if cancellation has been requested.
@@ -15089,12 +15166,12 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(40);
+	var utils = __webpack_require__(41);
 
 	/**
 	 * Transform the data for a request or a response
@@ -15115,7 +15192,7 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15126,7 +15203,7 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15146,7 +15223,7 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15166,7 +15243,7 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15191,12 +15268,12 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var Cancel = __webpack_require__(60);
+	var Cancel = __webpack_require__(61);
 
 	/**
 	 * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -15254,7 +15331,7 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15287,14 +15364,186 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 63 */
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _state = __webpack_require__(65);
+
+	var _state2 = _interopRequireDefault(_state);
+
+	var _getters = __webpack_require__(66);
+
+	var _getters2 = _interopRequireDefault(_getters);
+
+	var _mutations = __webpack_require__(67);
+
+	var _mutations2 = _interopRequireDefault(_mutations);
+
+	var _actions = __webpack_require__(68);
+
+	var _actions2 = _interopRequireDefault(_actions);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var user = {
+		state: _state2.default,
+		getters: _getters2.default,
+		mutations: _mutations2.default,
+		actions: _actions2.default
+	};
+
+	exports.default = user;
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = {
+		users: [{
+			id: 1,
+			name: 'abel',
+			address: 'cavite',
+			email: 'abel@gmail.com'
+		}],
+		formData: {
+			name: '',
+			email: '',
+			address: ''
+		}
+	};
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = {
+		usersList: function usersList(state) {
+			return state.users;
+		}
+	};
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = {
+		editData: function editData(state, user) {
+			var _self = this;
+
+			state.users.filter(function (item) {
+				if (item.id === user.id) {
+					for (var x in item) {
+
+						item[x] = user[x];
+					}
+				}
+			});
+		},
+		addUser: function addUser(state, data) {
+			var index = _.findLastIndex(state.users, 'id');
+			data.id = state.users[index].id + 1;
+			state.users.push(data);
+			state.formData = {};
+		},
+		deleteUser: function deleteUser(state, key) {
+
+			state.users.splice(key, 1);
+		},
+		updateUser: function updateUser(state, data) {
+
+			for (var x in state.users[data.key]) {
+				state.users[data.key][x] = data.payload[x];
+			}
+
+			state.formData = {};
+		},
+		setFormData: function setFormData(state, data) {
+			state.formData = data;
+		}
+	};
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = {
+		addUser: function addUser(context, payload) {
+			context.commit('addUser', payload);
+		}
+	};
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _state = __webpack_require__(84);
+
+	var _state2 = _interopRequireDefault(_state);
+
+	var _getters = __webpack_require__(86);
+
+	var _getters2 = _interopRequireDefault(_getters);
+
+	var _mutations = __webpack_require__(87);
+
+	var _mutations2 = _interopRequireDefault(_mutations);
+
+	var _actions = __webpack_require__(85);
+
+	var _actions2 = _interopRequireDefault(_actions);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var auth = {
+		state: _state2.default,
+		getters: _getters2.default,
+		mutations: _mutations2.default,
+		actions: _actions2.default
+	};
+
+	exports.default = auth;
+
+/***/ }),
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var Component = __webpack_require__(6)(
 	  /* script */
-	  __webpack_require__(64),
-	  /* template */
 	  __webpack_require__(71),
+	  /* template */
+	  __webpack_require__(80),
 	  /* scopeId */
 	  null,
 	  /* cssModules */
@@ -15321,7 +15570,7 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 64 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15330,11 +15579,11 @@ webpackJsonp([0,1],[
 		value: true
 	});
 
-	var _header = __webpack_require__(65);
+	var _header = __webpack_require__(72);
 
 	var _header2 = _interopRequireDefault(_header);
 
-	var _footer = __webpack_require__(68);
+	var _footer = __webpack_require__(77);
 
 	var _footer2 = _interopRequireDefault(_footer);
 
@@ -15359,6 +15608,17 @@ webpackJsonp([0,1],[
 		data: function data() {
 			return {};
 		},
+		created: function created() {
+			var _this = this;
+			this.$store.dispatch('getUser').then(function (res) {
+
+				if (res) {
+					_this.$store.commit('setUser', res);
+				} else {
+					_this.$store.commit('showLogin');
+				}
+			});
+		},
 
 		components: {
 			'app-header': _header2.default,
@@ -15367,18 +15627,18 @@ webpackJsonp([0,1],[
 	};
 
 /***/ }),
-/* 65 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(75)
+	__webpack_require__(73)
 
 	var Component = __webpack_require__(6)(
 	  /* script */
-	  __webpack_require__(66),
+	  __webpack_require__(75),
 	  /* template */
-	  __webpack_require__(67),
+	  __webpack_require__(76),
 	  /* scopeId */
 	  null,
 	  /* cssModules */
@@ -15405,7 +15665,47 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 66 */
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(74);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	if(content.locals) module.exports = content.locals;
+	// add the styles to the DOM
+	var update = __webpack_require__(17)("b7a78336", content, false);
+	// Hot Module Replacement
+	if(false) {
+	 // When the styles change, update the <style> tags
+	 if(!content.locals) {
+	   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-28eb54d4\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./header.vue", function() {
+	     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-28eb54d4\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./header.vue");
+	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+	     update(newContent);
+	   });
+	 }
+	 // When the module is disposed, remove the <style> tags
+	 module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(12)(undefined);
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n.breadcrumb li:last-child:before{\r\n\tcontent:'';\n}\n.login,.register{\r\n\tdisplay:none !important;\n}\n.show{\r\n\tdisplay:inline-block !important;\n}\r\n\r\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 75 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15413,6 +15713,13 @@ webpackJsonp([0,1],[
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -15441,12 +15748,15 @@ webpackJsonp([0,1],[
 			},
 			user: function user() {
 				return this.$store.state.auth.user;
+			},
+			showLogin: function showLogin() {
+				return this.$store.state.auth.showLogin;
 			}
 		}
 	};
 
 /***/ }),
-/* 67 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -15467,20 +15777,38 @@ webpackJsonp([0,1],[
 	      "to": "/users"
 	    }
 	  }, [_vm._v("Lobby")])], 1), _vm._v(" "), (!_vm.isLogin) ? _c('li', {
-	    staticClass: "active"
+	    staticClass: "active login",
+	    class: {
+	      show: _vm.showLogin
+	    }
 	  }, [_c('router-link', {
 	    attrs: {
 	      "to": "/login"
 	    }
-	  }, [_vm._v("Login")])], 1) : _vm._e(), _vm._v(" "), (_vm.isLogin) ? _c('li', {
-	    staticClass: "active"
+	  }, [_vm._v("Login")])], 1) : _vm._e(), _vm._v(" "), (!_vm.isLogin) ? _c('li', {
+	    staticClass: "register",
+	    class: {
+	      show: _vm.showLogin
+	    }
 	  }, [_c('router-link', {
 	    attrs: {
-	      "to": "/logout"
+	      "to": "/register"
 	    }
-	  }, [_vm._v("logout")])], 1) : _vm._e(), _vm._v(" "), (_vm.isLogin) ? _c('li', {
+	  }, [_vm._v("Register")])], 1) : _vm._e(), _vm._v(" "), (_vm.isLogin) ? _c('li', {
+	    staticClass: "active"
+	  }, [_c('a', {
+	    attrs: {
+	      "href": "logout"
+	    }
+	  }, [_vm._v("logout")])]) : _vm._e(), _vm._v(" "), _c('li', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (_vm.isLogin),
+	      expression: "isLogin"
+	    }],
 	    staticClass: "pull-right"
-	  }, [_vm._v("Welcome " + _vm._s(_vm.user.name))]) : _vm._e()]), _vm._v(" "), _c('hr')])
+	  }, [_vm._v("Welcome " + _vm._s(_vm.user.name))])]), _vm._v(" "), _c('hr')])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -15491,14 +15819,14 @@ webpackJsonp([0,1],[
 	}
 
 /***/ }),
-/* 68 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var Component = __webpack_require__(6)(
 	  /* script */
-	  __webpack_require__(69),
+	  __webpack_require__(78),
 	  /* template */
-	  __webpack_require__(70),
+	  __webpack_require__(79),
 	  /* scopeId */
 	  null,
 	  /* cssModules */
@@ -15525,7 +15853,7 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 69 */
+/* 78 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -15549,7 +15877,7 @@ webpackJsonp([0,1],[
 	};
 
 /***/ }),
-/* 70 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -15564,7 +15892,7 @@ webpackJsonp([0,1],[
 	}
 
 /***/ }),
-/* 71 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -15579,7 +15907,7 @@ webpackJsonp([0,1],[
 	}
 
 /***/ }),
-/* 72 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*!
@@ -24541,7 +24869,7 @@ webpackJsonp([0,1],[
 	//# sourceMappingURL=vuetify.js.map
 
 /***/ }),
-/* 73 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -41629,10 +41957,10 @@ webpackJsonp([0,1],[
 	  }
 	}.call(this));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(74)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(83)(module)))
 
 /***/ }),
-/* 74 */
+/* 83 */
 /***/ (function(module, exports) {
 
 	module.exports = function(module) {
@@ -41648,60 +41976,7 @@ webpackJsonp([0,1],[
 
 
 /***/ }),
-/* 75 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(76);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	if(content.locals) module.exports = content.locals;
-	// add the styles to the DOM
-	var update = __webpack_require__(17)("b7a78336", content, false);
-	// Hot Module Replacement
-	if(false) {
-	 // When the styles change, update the <style> tags
-	 if(!content.locals) {
-	   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-28eb54d4\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./header.vue", function() {
-	     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-28eb54d4\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./header.vue");
-	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-	     update(newContent);
-	   });
-	 }
-	 // When the module is disposed, remove the <style> tags
-	 module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 76 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(12)(undefined);
-	// imports
-
-
-	// module
-	exports.push([module.id, "\n.breadcrumb li:last-child:before{\r\n\tcontent:'';\n}\r\n\r\n", ""]);
-
-	// exports
-
-
-/***/ }),
-/* 77 */
-/***/ (function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.default = {
-		title: ''
-	};
-
-/***/ }),
-/* 78 */
+/* 84 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -41709,10 +41984,99 @@ webpackJsonp([0,1],[
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	exports.default = {};
+	exports.default = {
+		isLogin: false,
+		showLogin: false,
+		user: {}
+	};
 
 /***/ }),
-/* 79 */
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _axios = __webpack_require__(39);
+
+	var _axios2 = _interopRequireDefault(_axios);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {
+		login: function login(_ref, payload) {
+			var commit = _ref.commit,
+			    state = _ref.state;
+
+			return _axios2.default.post('login', payload).then(function (res) {
+				/*
+	   	Set user data when login is success
+	   */
+				if (!_.isEmpty(res.data)) {
+					state.user = res.data;
+					state.isLogin = true;
+					return true;
+				} else {
+					return false;
+				}
+			});
+		},
+		logout: function logout() {
+			return _axios2.default.post('/logout').then(function (res) {
+				console.log(res);
+			});
+		},
+		getUser: function getUser(_ref2, payload) {
+			var commit = _ref2.commit;
+
+			return _axios2.default.get('/getUser').then(function (res) {
+
+				if (!_.isEmpty(res.data)) {
+					return res.data;
+				} else {
+					return false;
+				}
+			}).catch(function (error) {
+				console.log(error);
+			});
+		},
+		register: function register(_ref3, payload) {
+			var commit = _ref3.commit,
+			    state = _ref3.state;
+
+			return _axios2.default.post('/register', payload).then(function (res) {
+				/*
+	   	Set user data when register is success
+	   */
+				state.user = res.data;
+				state.isLogin = true;
+				return res;
+			}).catch(function (error) {
+				alert('Failed to register');
+			});
+		}
+	};
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = {
+		getUser: function getUser(state) {
+			return state.user;
+		}
+	};
+
+/***/ }),
+/* 87 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -41722,40 +42086,11 @@ webpackJsonp([0,1],[
 	});
 	exports.default = {
 		setUser: function setUser(state, payload) {
-
-			payload.store.state.auth.user = payload.data;
-			payload.store.state.auth.isLogin = true;
-		}
-	};
-
-/***/ }),
-/* 80 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _axios = __webpack_require__(38);
-
-	var _axios2 = _interopRequireDefault(_axios);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = {
-		getUser: function getUser(_ref, payload) {
-			var commit = _ref.commit;
-
-			return _axios2.default.get('/getUser').then(function (res) {
-
-				if (!_.isEmpty(res.data)) {
-					return res.data;
-				} else {
-					return false;
-				}
-			});
+			state.user = payload;
+			state.isLogin = true;
+		},
+		showLogin: function showLogin(state) {
+			state.showLogin = true;
 		}
 	};
 

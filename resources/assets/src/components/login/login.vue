@@ -34,17 +34,18 @@ export default{
 	methods:{
 		login(){
 			var _this = this;
-
 			var credentials = {
 				email:this.email,
 				password:this.password
 			}
 
 			this.$store.dispatch('login',credentials).then(function(res){
-
+				
 				if(res){
-					_this.$router.push({name:'home'});
-					console.log(_this.$store.state.auth.user);
+					/*
+						When login success redirect to home page
+					*/
+					_this.$router.push({name:'home'});					
 					return;
 				}
 				alert('Invalid credentials!');				

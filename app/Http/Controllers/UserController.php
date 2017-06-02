@@ -24,4 +24,18 @@ class UserController extends Controller
     	return response()->json(auth()->user());
     	
     }
+
+    public function logout(){
+        auth()->logout();
+        return redirect()->to('/');
+    }
+
+    public function register(Request $request){
+
+        if($request->isMethod('post')){
+
+            return response()->json(App\User::Register($request->all()));
+        }
+        return view('index');
+    }
 }
