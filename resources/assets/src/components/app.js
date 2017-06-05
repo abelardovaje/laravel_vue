@@ -2,8 +2,7 @@ import Vue from 'vue';
 import Router from './router';
 import Store from './store/store';
 import App from './app.vue';
-import Vuetify from 'vuetify'
-Vue.use(Vuetify)
+
 window._ = require('lodash');
 
 new Vue({

@@ -3,8 +3,10 @@
 <head>
 	<title>Vue app</title>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap/dist/css/bootstrap.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-	<link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome/css/font-awesome.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+	<script type="text/javascript" src="{{asset('js/jquery/dist/jquery.js')}}"></script>
+	<script type="text/javascript" src="{{asset('css/bootstrap/dist/js/bootstrap.js')}}"></script>
 </head>
 <body>
 

@@ -29,3 +29,4 @@ Route::post('/login','UserController@login');
 Route::get('/logout','UserController@logout');
 Route::get('/getUser','UserController@getUser');
 Route::match(['get','post'],'/register','UserController@register');
+Route::get('/lobby','LobbyController@index');
