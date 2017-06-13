@@ -5,7 +5,8 @@ module.exports = {
 	// This is the "main" file which should include all other modules
 	entry:{
 		
-		app:'./resources/assets/src/components/app.js'
+		app:'./resources/assets/src/components/app.js',
+		test:'./node_modules/materialize-css/dist/js/materialize.js'
 	},
 	// Where should the compiled file go?
 	output: {      

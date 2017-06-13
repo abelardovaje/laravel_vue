@@ -3,7 +3,9 @@ import Router from './router';
 import Store from './store/store';
 import App from './app.vue';
 
+
 window._ = require('lodash');
+
 
 new Vue({
 	el:'#app',

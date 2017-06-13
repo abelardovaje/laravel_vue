@@ -1,5 +1,5 @@
 var elixir = require('laravel-elixir');
-
+ 
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -11,6 +11,20 @@ var elixir = require('laravel-elixir');
  |
  */
 
+ var vendor = [
+ 	'./node_modules/materialize-css/dist/css/materialize.css'
+ ];
+
+
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix.sass([
+    	'app.scss',
+    	'home.scss'
+    ],'public/css/app.css');
+
+ //    elixir(function(mix) {
+	//     mix.copy('./node_modules/materialize-css/fonts', 'public/fonts');
+	// });
+
+    // mix.sass(vendor,'public/css/vendor.css');
 });

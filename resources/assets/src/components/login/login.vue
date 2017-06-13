@@ -53,7 +53,11 @@ export default{
 			});
 		}
 	},
-	created(){
+	mounted(){
+		
+		if(this.$store.state.auth.isLogin){			
+			this.$router.push({name:'home'});
+		}
 		
 	}
 }

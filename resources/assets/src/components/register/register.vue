@@ -47,6 +47,13 @@ export default{
 				_this.$router.push({name:'home'});
 			});
 		}
+	},
+	mounted(){
+		
+		if(this.$store.state.auth.isLogin){			
+			this.$router.push({name:'home'});
+		}
+		
 	}
 }
 

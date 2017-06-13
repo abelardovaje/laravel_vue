@@ -51,4 +51,67 @@
 .lobby-container .party-list li {
   display: inline; }
 
+.header {
+  background: #35353a;
+  color: white; }
+  .header nav {
+    margin: 0px;
+    background: none;
+    border: 0px; }
+  .header .navbar-nav > li > a {
+    color: white; }
+    .header .navbar-nav > li > a:hover {
+      color: gold; }
+    .header .navbar-nav > li > a:focus {
+      color: gold; }
+  .header .navbar-nav > li {
+    border: 2px solid #35353a; }
+    .header .navbar-nav > li:hover {
+      border-bottom: 2px solid gold; }
+
+.page-header-area {
+  height: 350px;
+  background: #292626; }
+  .page-header-area .page-header-ctn {
+    height: 100%; }
+  .page-header-area .jumbotron {
+    background: none;
+    height: 300px;
+    color: white; }
+    .page-header-area .jumbotron .container {
+      position: relative;
+      top: -10px; }
+    .page-header-area .jumbotron a {
+      border: 0px;
+      border-radius: 0px;
+      background: #49b949;
+      padding: 10px 30px;
+      color: white;
+      position: relative;
+      top: 10px; }
+
+#content {
+  border: 1px solid;
+  height: auto;
+  background: gray; }
+  #content .main-content {
+    background: white;
+    position: relative;
+    top: -20px;
+    height: auto;
+    padding: 18px; }
+    #content .main-content .thumbnail {
+      border: 0px solid;
+      text-align: center;
+      position: relative;
+      top: 5px;
+      height: 303px; }
+      #content .main-content .thumbnail p.details {
+        height: 100px; }
+      #content .main-content .thumbnail img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%; }
+
+
 /*# sourceMappingURL=app.css.map */

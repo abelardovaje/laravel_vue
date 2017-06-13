@@ -62,16 +62,7 @@
 				  		</div>
 				  	</div>
 				  </li>
-				  <li class="list-group-item">
-					<div class="row">
-				  		<div class="col-lg-10">
-				  			<span class="room-name">Name</span>
-				  		</div>
-				  		<div class="col-lg-2">
-				  			<button>Join</button>
-				  		</div>
-				  	</div>
-				  </li>
+				 
 				 
 				</ul>
 
