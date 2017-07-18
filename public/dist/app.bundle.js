@@ -9605,7 +9605,7 @@ webpackJsonp([0,2],[
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "C:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\home\\home.vue"
+	Component.options.__file = "c:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\home\\home.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] home.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -9922,7 +9922,7 @@ webpackJsonp([0,2],[
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "C:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\user\\user.vue"
+	Component.options.__file = "c:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\user\\user.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] user.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -12456,7 +12456,7 @@ webpackJsonp([0,2],[
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "C:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\user\\user-form.vue"
+	Component.options.__file = "c:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\user\\user-form.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] user-form.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -12671,7 +12671,7 @@ webpackJsonp([0,2],[
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "C:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\lobby\\lobby.vue"
+	Component.options.__file = "c:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\lobby\\lobby.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] lobby.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -12864,7 +12864,7 @@ webpackJsonp([0,2],[
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "C:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\login\\login.vue"
+	Component.options.__file = "c:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\login\\login.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] login.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -13092,7 +13092,7 @@ webpackJsonp([0,2],[
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "C:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\register\\register.vue"
+	Component.options.__file = "c:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\register\\register.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] register.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -16053,7 +16053,7 @@ webpackJsonp([0,2],[
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "C:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\app.vue"
+	Component.options.__file = "c:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\app.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] app.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -16148,7 +16148,7 @@ webpackJsonp([0,2],[
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "C:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\layouts\\header.vue"
+	Component.options.__file = "c:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\layouts\\header.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] header.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -16450,7 +16450,7 @@ webpackJsonp([0,2],[
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "C:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\layouts\\footer.vue"
+	Component.options.__file = "c:\\Users\\5200012\\Desktop\\vue-app-laravel\\resources\\assets\\src\\components\\layouts\\footer.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] footer.vue: functional components are not supported with templates, they should use render functions.")}
 
