@@ -3,6 +3,7 @@ var path = require('path');
 
 module.exports = {
 	// This is the "main" file which should include all other modules
+	//Test
 	entry:{
 		
 		app:'./resources/assets/src/components/app.js',
